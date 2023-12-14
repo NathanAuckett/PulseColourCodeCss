@@ -1,0 +1,84 @@
+/* ==UserStyle==
+@name           10.96.84.111/gax/plugins/pulse/ - Pulse Colors
+@namespace      github.com/openstyles/stylus
+@updateURL 	https://gist.githubusercontent.com/NathanAuckett/ba21ddd60c579261f2fdc574a0af1472/raw/3fd0bb5c1b40e3e503d312554c0c78d295938f89/Browser%2520CC%2520Pulse%2520Colour%2520code%2520CSS
+@version        1.0.0
+@description    Adds colour coding to browser version of call board view based on the status icons
+@author         Nathan Auckett
+==/UserStyle== */
+
+:root {
+    --ready-color: #12ff00;
+    --acw-color: #ecff00;
+    --inbound-call-color: #ff00f2;
+    --outbound-call-color: #00e1ff;
+    --not-ready-color: #f00
+}
+
+
+/* Kill default background colours for cells */
+.ui-grid-cell{
+    background-color: transparent !important;
+}
+
+/* icon-status-aftercallwork */
+
+
+/* Ready */
+.ui-grid-row:has(.icon-status-ready-yes){
+    background-color: var(--ready-color) !important;
+}
+
+.ui-grid-row:has(.icon-status-ready-yes):nth-child(2n+1){
+    background-color: color-mix(in srgb, white , var(--ready-color)) !important;
+}
+
+
+/* ACW */
+.ui-grid-row:has(.icon-status-aftercallwork){
+    background-color: var(--acw-color) !important;
+}
+
+.ui-grid-row:has(.icon-status-aftercallwork):nth-child(2n+1){
+    background-color: color-mix(in srgb, white , var(--acw-color)) !important;
+}
+
+
+/* Not ready */
+.ui-grid-row:has(.icon-status-ready-no){
+    background-color: var(--not-ready-color) !important;
+}
+
+.ui-grid-row:has(.icon-status-ready-no):nth-child(2n+1){
+    background-color: color-mix(in srgb, white 30%, var(--not-ready-color)) !important;
+}
+
+
+/* Inbound call */
+.ui-grid-row:has(.icon-status-call-inbound){
+    background-color: var(--inbound-call-color) !important;
+}
+
+.ui-grid-row:has(.icon-status-call-inbound):nth-child(2n+1){
+    background-color: color-mix(in srgb, white, var(--inbound-call-color)) !important;
+}
+
+
+/* Outbound call */
+.ui-grid-row:has(.icon-status-call-outbound){
+    background-color: var(--outbound-call-color) !important;
+}
+
+.ui-grid-row:has(.icon-status-call-outbound):nth-child(2n+1){
+    background-color: color-mix(in srgb, white, var(--outbound-call-color)) !important;
+}
+
+
+/* Outbound / not ready */
+.ui-grid-row:has(.icon-status-call-outbound){
+    background-color: var(--outbound-call-color) !important;
+}
+
+.ui-grid-row:has(.icon-status-call-outbound):nth-child(2n+1){
+    background-color: color-mix(in srgb, white, var(--outbound-call-color)) !important;
+}
